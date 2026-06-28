@@ -1,1 +1,3 @@
 **/projectFiles/
+node_modules
+dist
