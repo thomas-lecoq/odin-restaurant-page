@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Chinese Dragon';
+    src: url('../assets/fonts/ChineseDragon-Regular.woff2') format('woff2'),
+        url('../assets/fonts/ChineseDragon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.site-header {
+    --black: #000000;
+    --black-transparent30: #0000004d;
+    --light-cyan: #c8e8e9;;
+    --intense-cyan: #44daff;
+    --medium-purple: #6900cc;
+    --intense-purple: #3c0272;
+    --light-pink: #ff91f6;
+    --medium-pink: #ff6af3;
+    --light-white : #dddddd;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 6rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: linear-gradient(45deg, var(--intense-cyan), var(--medium-purple));
+    box-shadow: 0 2px 8px var(--black-transparent30);
+}
+
+.site-identity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--medium-pink);
+    box-shadow: 0 2px 12px var(--black-transparent30);
+    border-radius: 3rem;
+    padding: 0.3rem 1rem;
+}
+
+.site-identity__logo {
+    height: 5rem;
+    width: auto;
+}
+
+.site-identity__brand {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: var(--intense-purple);
+    -webkit-text-stroke: 1px var(--light-pink);
+    text-shadow: 0 1px 2px var(--light-cyan);
+    font-family: "Chinese Dragon";
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.site-header__tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 6rem;
+    padding-top: 8px;
+    border: 1px solid var(--light-pink);
+    border-radius: 1rem;
+    background-color: var(--medium-purple);
+    box-shadow: 0 2px 4px var(--black-transparent30);
+    font-family: "Chinese Dragon";
+    font-weight: 100;
+    font-size: 1rem;
+    text-shadow: 0 1px 4px var(--black);
+    color: var(--light-white);
+}
