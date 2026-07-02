@@ -2,15 +2,13 @@
 import "./header.css";
 import logoUrl from "../assets/images/logo.png";
 
-// Declaring an interface for the object "Tab"
+// Interface for the object "Tab"
 interface Tab {
     readonly id: string;
     readonly label: string;
 }
 
-// export function createHeader(onNavigate: (id: string) => void): HTMLElement
-export function createHeader(): HTMLElement {
-
+export function createHeader(onNavigate: (tabId: string) => void): HTMLElement {
     // array of Tab corresponding to individual nav buttons
     const tabs: Tab[] = [
         {id: "home", label: "Home"},
@@ -55,8 +53,9 @@ export function createHeader(): HTMLElement {
     nav.addEventListener("click", (e) => {
         const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".site-header__tab");
         if (!btn || !nav.contains(btn)) return; // in case of clicks out of nav area
-        // const id = btn.dataset.tabId;
-        // if (id) onNavigate(id);
+
+        const tabId = btn.dataset.tabId; // set pageId corresponding to tabId data
+        if (tabId) onNavigate(tabId);
     });
     
     identity.append(logo, brand);

@@ -1,32 +1,35 @@
 import "./styles/main.css";
 import { createHeader, createFooter } from "./components"; // search for index.ts file in ./components
+import { pages } from "./pages";
 
-// Barrels du moule SPA (placeholders pour l'instant) :
-// import { createHeader, createFooter } from "./components";
-// import { pages } from "./pages";
-
-// main function — point d'assemblage : header (onglets) + main (page active) + footer.
+// main function - assemble pages
 function init(): void {
-    // function navigate(id: string): void {
+    function navigate(tabId: string): void {
+        // identify page content to generate from its tabId
+        const page = pages.find((p) => p.id === tabId);
+        if (!page) return;
 
-    //     // identify page to navigate to from its id
-    //     const page = pages.find((p) => p.id === id);
-    //     if (!page) return;
+        // set `main` DOM element and replace its content depending on tabId
+        const mainClass = "site-main"
+        let main = document.querySelector(`.${mainClass}`);
+        if (!main) {
+            main = document.createElement("div");
+            main.className = mainClass;
+            header.after(main);
+        }
+        main.replaceChildren(page.render());
 
-    //     // replace current page content with the new content corresponding to page id
-    //     main.replaceChildren(page.render());
+        // set active class on clicked button, unset active class on others
+        header
+            .querySelectorAll<HTMLButtonElement>(".site-header__tab")
+            .forEach((b) => b.classList.toggle("active", b.dataset.tabId === tabId))
+    }
 
-    //     // toggle "active" class on all tab
-    //     header
-    //         .querySelectorAll<HTMLButtonElement>(".site-header__tab")
-    //         .forEach((b) => b.classList.toggle("active", b.dataset.tabId === id))
-    // }
-
-    // create page content
-    // const header = createHeader(navigate);
-    const header = createHeader();
+    // init app home page content
+    const header = createHeader(navigate); // page react on tab click
     const footer = createFooter();
     document.body.append(header, footer);
+    navigate("home"); // force navigation to "home" on init
 }
 
 init();
