@@ -1,0 +1,36 @@
+.page-home {
+    --black: #000000;
+    --black-transparent30: #0000004d;
+    --light-cyan: #c8e8e9;
+    --intense-cyan: #44daff;
+    --medium-purple: #6900cc;
+    --intense-purple: #3c0272;
+    --light-pink: #ff91f6;
+    --medium-pink: #ff6af3;
+    --light-white : #dddddd;
+
+    flex: 1; /* fill the space between header and footer (body is a flex column) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--intense-purple);
+}
+
+ul {
+    list-style: none;
+}
+
+.intro-content__text,
+.hours-content__text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--black);
+}

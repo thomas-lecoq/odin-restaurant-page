@@ -6,3 +6,23 @@ body {
     background-repeat: repeat;
     background-size: 450px;
 }
+
+.site-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    inline-size: 40ch;
+    padding: 2rem;
+    border: 4px solid var(--medium-pink);
+    border-radius: 2rem;
+    background-color: var(--light-white);
+    box-shadow: 0 4px 16px var(--black-transparent30);
+    text-align: center;
+}
