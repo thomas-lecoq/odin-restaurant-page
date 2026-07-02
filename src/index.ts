@@ -1,5 +1,5 @@
 import "./styles/main.css";
-import { createHeader } from "./components"; // search for index.ts file in ./components
+import { createHeader, createFooter } from "./components"; // search for index.ts file in ./components
 
 // Barrels du moule SPA (placeholders pour l'instant) :
 // import { createHeader, createFooter } from "./components";
@@ -22,10 +22,11 @@ function init(): void {
     //         .forEach((b) => b.classList.toggle("active", b.dataset.tabId === id))
     // }
 
-    // create header
+    // create page content
     // const header = createHeader(navigate);
     const header = createHeader();
-    document.body.append(header);
+    const footer = createFooter();
+    document.body.append(header, footer);
 }
 
 init();
