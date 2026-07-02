@@ -1,4 +1,4 @@
-// TODO: composant header (marque + onglets de navigation SPA).
+// Header component content
 import "./header.css";
 import logoUrl from "../assets/images/logo.png";
 
@@ -59,7 +59,7 @@ export function createHeader(): HTMLElement {
         // if (id) onNavigate(id);
     });
     
-    identity.append(logo, brand)
+    identity.append(logo, brand);
     header.append(identity, nav);
 
     return header;
